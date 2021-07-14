@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3945DBDA-CDC3-4ECB-A551-3EB6651110DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Phamacy_Management_System</RootNamespace>
+    <AssemblyName>Phamacy Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comp\ComFrmRep.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComFrmRep.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comp\CompFrmRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comp\CompFrmRep.Designer.cs">
+      <DependentUpon>CompFrmRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Del\DelFrmRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Del\DelFrmRep.Designer.cs">
+      <DependentUpon>DelFrmRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Del\DelRep.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DelRep.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Del\DelViewFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Del\DelViewFrm.Designer.cs">
+      <DependentUpon>DelViewFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemRepDate.cs">
+      <DependentUpon>ItemRepDate.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Items\ItemsFrmRepByExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ItemsFrmRepByExp.Designer.cs">
+      <DependentUpon>ItemsFrmRepByExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\itemsFrmRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\itemsFrmRep.Designer.cs">
+      <DependentUpon>itemsFrmRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\AddItemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\AddItemFrm.Designer.cs">
+      <DependentUpon>AddItemFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackupDatabaseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupDatabaseFrm.Designer.cs">
+      <DependentUpon>BackupDatabaseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\CashRcptFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cash\CashRcptFrm.Designer.cs">
+      <DependentUpon>CashRcptFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comp\CompEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comp\CompEditFrm.Designer.cs">
+      <DependentUpon>CompEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comp\CompRegFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comp\CompRegFrm.Designer.cs">
+      <DependentUpon>CompRegFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comp\CompViewFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comp\CompViewFrm.Designer.cs">
+      <DependentUpon>CompViewFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Debt\DebtEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debt\DebtEditFrm.Designer.cs">
+      <DependentUpon>DebtEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Debt\DebtRegFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debt\DebtRegFrm.Designer.cs">
+      <DependentUpon>DebtRegFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Debt\DebtViewFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debt\DebtViewFrm.Designer.cs">
+      <DependentUpon>DebtViewFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Del\DelEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Del\DelEditFrm.Designer.cs">
+      <DependentUpon>DelEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Del\DelRegFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Del\DelRegFrm.Designer.cs">
+      <DependentUpon>DelRegFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\EditItemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\EditItemFrm.Designer.cs">
+      <DependentUpon>EditItemFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emp\EmpEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emp\EmpEditFrm.Designer.cs">
+      <DependentUpon>EmpEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emp\EmpRegFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emp\EmpRegFrm.Designer.cs">
+      <DependentUpon>EmpRegFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emp\EmpViewFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emp\EmpViewFrm.Designer.cs">
+      <DependentUpon>EmpViewFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emp\Emp_Rep.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Emp_Rep.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Emp\Emp_Rep_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emp\Emp_Rep_Frm.Designer.cs">
+      <DependentUpon>Emp_Rep_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemRep.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemRep.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PBill\PBillByDate.cs">
+      <DependentUpon>PBillByDate.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PBill\PBillByNo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBillByNo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PBill\PBillFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PBill\PBillFrm.Designer.cs">
+      <DependentUpon>PBillFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PBill\PBillFrmByDateDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PBill\PBillFrmByDateDay.Designer.cs">
+      <DependentUpon>PBillFrmByDateDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PBill\PBillFrmEmpRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PBill\PBillFrmEmpRep.Designer.cs">
+      <DependentUpon>PBillFrmEmpRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PBill\PBillFrmToday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PBill\PBillFrmToday.Designer.cs">
+      <DependentUpon>PBillFrmToday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacyDataSet.cs">
+      <DependentUpon>pharmacyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pharmacyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacyDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pharmacyDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacyDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pharmacyDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacyDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pharmacyDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RestoreDatabaseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestoreDatabaseFrm.Designer.cs">
+      <DependentUpon>RestoreDatabaseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBill\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBill\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBill\SBillByDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBill\SBillByDate.Designer.cs">
+      <DependentUpon>SBillByDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBill\SBillByEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBill\SBillByEmployee.Designer.cs">
+      <DependentUpon>SBillByEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBill\SBillFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBill\SBillFrm.Designer.cs">
+      <DependentUpon>SBillFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBill\SBillToday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBill\SBillToday.Designer.cs">
+      <DependentUpon>SBillToday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBill\SBillTodayRep.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SBillTodayRep.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SBill\Sbilviwe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sbilviwe.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SplashScreenFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreenFrm.Designer.cs">
+      <DependentUpon>SplashScreenFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ViewItemsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ViewItemsFrm.Designer.cs">
+      <DependentUpon>ViewItemsFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Comp\ComFrmRep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ComFrmRep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comp\CompFrmRep.resx">
+      <DependentUpon>CompFrmRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Del\DelFrmRep.resx">
+      <DependentUpon>DelFrmRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Del\DelRep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DelRep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Del\DelViewFrm.resx">
+      <DependentUpon>DelViewFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemRepDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemRepDate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemsFrmRepByExp.resx">
+      <DependentUpon>ItemsFrmRepByExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\itemsFrmRep.resx">
+      <DependentUpon>itemsFrmRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\AddItemFrm.resx">
+      <DependentUpon>AddItemFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackupDatabaseFrm.resx">
+      <DependentUpon>BackupDatabaseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cash\CashRcptFrm.resx">
+      <DependentUpon>CashRcptFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comp\CompEditFrm.resx">
+      <DependentUpon>CompEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comp\CompRegFrm.resx">
+      <DependentUpon>CompRegFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comp\CompViewFrm.resx">
+      <DependentUpon>CompViewFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debt\DebtEditFrm.resx">
+      <DependentUpon>DebtEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debt\DebtRegFrm.resx">
+      <DependentUpon>DebtRegFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debt\DebtViewFrm.resx">
+      <DependentUpon>DebtViewFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Del\DelEditFrm.resx">
+      <DependentUpon>DelEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Del\DelRegFrm.resx">
+      <DependentUpon>DelRegFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\EditItemFrm.resx">
+      <DependentUpon>EditItemFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emp\EmpEditFrm.resx">
+      <DependentUpon>EmpEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emp\EmpRegFrm.resx">
+      <DependentUpon>EmpRegFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emp\EmpViewFrm.resx">
+      <DependentUpon>EmpViewFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emp\Emp_Rep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Emp_Rep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emp\Emp_Rep_Frm.resx">
+      <DependentUpon>Emp_Rep_Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemRep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemRep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PBill\PBillByDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PBillByDate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PBill\PBillByNo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PBillByNo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PBill\PBillFrm.resx">
+      <DependentUpon>PBillFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PBill\PBillFrmByDateDay.resx">
+      <DependentUpon>PBillFrmByDateDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PBill\PBillFrmEmpRep.resx">
+      <DependentUpon>PBillFrmEmpRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PBill\PBillFrmToday.resx">
+      <DependentUpon>PBillFrmToday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestoreDatabaseFrm.resx">
+      <DependentUpon>RestoreDatabaseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBill\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBill\SBillByDate.resx">
+      <DependentUpon>SBillByDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBill\SBillByEmployee.resx">
+      <DependentUpon>SBillByEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBill\SBillFrm.resx">
+      <DependentUpon>SBillFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBill\SBillToday.resx">
+      <DependentUpon>SBillToday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBill\SBillTodayRep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SBillTodayRep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBill\Sbilviwe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sbilviwe.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreenFrm.resx">
+      <DependentUpon>SplashScreenFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ViewItemsFrm.resx">
+      <DependentUpon>ViewItemsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="pharmacyDataSet.xsc">
+      <DependentUpon>pharmacyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pharmacyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pharmacyDataSet.xss">
+      <DependentUpon>pharmacyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacyDataSet1.xsc">
+      <DependentUpon>pharmacyDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacyDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pharmacyDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pharmacyDataSet1.xss">
+      <DependentUpon>pharmacyDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacyDataSet2.xsc">
+      <DependentUpon>pharmacyDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacyDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pharmacyDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pharmacyDataSet2.xss">
+      <DependentUpon>pharmacyDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacyDataSet3.xsc">
+      <DependentUpon>pharmacyDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="pharmacyDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pharmacyDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pharmacyDataSet3.xss">
+      <DependentUpon>pharmacyDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-help-about-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-help-about-icon~1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icoico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashScreen.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
